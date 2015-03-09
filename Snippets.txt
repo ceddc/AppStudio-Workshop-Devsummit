@@ -1,0 +1,39 @@
+
+    //Add banner on top
+    Rectangle {
+        id: banner
+        height: 50
+        width: parent.width
+        color: "red"
+
+        //Add title text in the center of banner
+        Text {
+            id: title
+            text: "Hello World"
+            anchors.centerIn: parent
+            color: "white"
+            font.pointSize: 25
+        }
+
+        //Add Button
+        ImageButton {
+            id: toggleButton
+            rotation: zoomButtons.visible ? 180 : 0
+            source: "https://cdn4.iconfinder.com/data/icons/miu/22/circle_arrow-down_download-128.png"
+            width: 30
+            height: 30
+            anchors.right: parent.right
+            anchors.verticalCenter: parent.verticalCenter
+            anchors.margins: 5
+
+            checkedColor : "transparent"
+            pressedColor : "transparent"
+            hoverColor : "transparent"
+            glowColor : "transparent"
+
+            onClicked: {
+                //javascript - hide the map tool bar
+                zoomButtons.visible = !zoomButtons.visible
+            }
+        }
+    }
